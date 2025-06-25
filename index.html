@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SECTION AA UPGRADE</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: #f9f9f9; color: #333; }
+
+    header {
+      background: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header img {
+      height: 50px;
+      vertical-align: middle;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1586105251261-72a756497a12?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-shadow: 2px 2px 8px #000;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    .btn {
+      background: #e67e22;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    .section {
+      padding: 50px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .section h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .service {
+      background: white;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .testimonials {
+      background: #f1f1f1;
+      padding: 30px;
+      border-left: 5px solid #e67e22;
+      margin-bottom: 20px;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 6px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 25px;
+      margin-top: 50px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-content">
+      <img src="logo.png" alt="SectionAA Logo" />
+      <h1>Section AA Upgrade</h1>
+    </div>
+  
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+
+  </header>
+
+  <div class="hero">
+    <video autoplay muted loop playsinline class="hero-bg">
+      <source src="/images/luxuryhousesfrom.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  
+    <div class="hero-content">
+      <h1>Trusted Renovation Specialists</h1>
+      <p>Complete Home Renovations • Kitchens • Bathrooms</p>
+      <button class="btn" onclick="document.getElementById('quote').scrollIntoView({behavior:'smooth'})">
+        Get a Free Quote
+      </button>
+    </div>
+  </div>
+  
+
+  <section class="section">
+    <h2>Why Choose Us?</h2>
+    <div class="services">
+      <div class="service">
+        <h3>Full Project Management</h3>
+        <p>From planning to completion, we manage everything.</p>
+      </div>
+      <div class="service">
+        <h3>Custom Designs</h3>
+        <p>We tailor your renovation to fit your lifestyle and budget.</p>
+      </div>
+      <div class="service">
+        <h3>Qualified Builders</h3>
+        <p>Licensed, experienced, and passionate about quality.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials">
+      <p>“We love our new kitchen and bathroom! The team was professional and helpful every step of the way.”<br>– Sarah & James, Auckland</p>
+    </div>
+    <div class="testimonials">
+      <p>“Excellent service and top-notch quality. We highly recommend Premier Renovations.”<br>– Amanda L.</p>
+    </div>
+  </section>
+
+  <section class="section" id="quote">
+    <h2>Request a Free Quote</h2>
+    <form id="quoteForm">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required />
+
+      <label for="email">Email</label>
+      <input type="email" id="email" required />
+
+      <label for="project">Project Description</label>
+      <textarea id="project" rows="5" required></textarea>
+
+      <button class="btn" type="submit">Submit</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Section AA Upgrade | Auckland, NZ | Call: +64226768044</p>
+  </footer>
+
+  <script>
+    document.getElementById("quoteForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      const name = document.getElementById("name").value;
+      alert("Thank you, " + name + "! We'll contact you shortly.");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
