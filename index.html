@@ -11,14 +11,15 @@
     body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: #f9f9f9; color: #333; }
 
     header {
-      background: #222;
+      
       color: #fff;
       padding: 20px;
       text-align: center;
     }
 
     header img {
-      height: 50px;
+      height: 100px;
+      max-height: 120px;
       vertical-align: middle;
     }
 
@@ -131,11 +132,15 @@
   </header>
 
   <div class="hero">
-    <video autoplay muted loop playsinline class="hero-bg">
+    <video id="heroVideo" class="hero-bg" autoplay muted playsinline>
   <source src="images/luxuryhousesfrom.mp4" type="video/mp4">
+  <source src="images/kitchen.mp4" type="video/mp4">
+  <source src="images/bathroom.mp4" type="video/mp4">
   Your browser does not support the video tag.
     </video>
 
+  <source src="images/kitchen.mp4" type="video/mp4">
+ 
   
     <div class="hero-content">
       <h1>Trusted Renovation Specialists</h1>
@@ -195,6 +200,32 @@
     <p>&copy; 2025 Section AA Upgrade | Auckland, NZ | Call: +64226768044</p>
   </footer>
 <script src="script.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const videoElement = document.getElementById('heroVideo');
+
+    const videoSources = [
+      'images/luxuryhousesfrom.mp4',
+      'images/kitchen.mp4',
+      'images/bathroom.mp4'
+    ];
+
+    let currentVideo = 0;
+
+    function playNextVideo() {
+      videoElement.src = videoSources[currentVideo];
+      videoElement.load();
+      videoElement.play();
+      currentVideo = (currentVideo + 1) % videoSources.length;
+    }
+
+    videoElement.addEventListener('ended', playNextVideo);
+
+    // Start the sequence
+    playNextVideo();
+  });
+</script>
+
 
 
 </body>
